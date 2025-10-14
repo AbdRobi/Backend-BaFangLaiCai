@@ -37,6 +37,18 @@ router.get('/customer/:id', (req, res) => {
     });
 });
 
+router.put('/customer/:id', (req, res) => {
+    const customerId = req.params.id;
+    const { nama, email, password, telepon, alamat } = req.body;
+    const sql = "UPDATE customer SET nama = ?, email = ?, password = ?, telepon = ?, alamat = ? WHERE id = ?";
+    db.query(sql, [nama, email, password, telepon, alamat, customerId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.status(200).json({ message: 'Customer updated' });
+    });
+});
+
 router.get('/purchase-history', (req, res) => {
     const sql = "SELECT * FROM purchase_history";
     db.query(sql, (err, results) => {
@@ -68,6 +80,18 @@ router.get('/purchase-history/:id', (req, res) => {
         res.status(200).json({ results });
     });
 }); 
+
+router.put('/purchase-history/:id', (req, res) => {
+    const historyId = req.params.id;
+    const { customer_id, purchase_details, purchase_date } = req.body;
+    const sql = "UPDATE purchase_history SET customer_id = ?, purchase_details = ?, purchase_date = ? WHERE id = ?";
+    db.query(sql, [customer_id, purchase_details, purchase_date, historyId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.status(200).json({ message: 'Purchase history updated' });
+    });
+});
 
 
 module.exports = router
