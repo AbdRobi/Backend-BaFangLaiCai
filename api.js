@@ -37,6 +37,17 @@ router.get('/customer/:id', (req, res) => {
     });
 });
 
+router.get('/customer/email/:email', (req, res) => {
+    const customerEmail = req.params.email;
+    const sql = "SELECT * FROM customer WHERE email = ?";   
+    db.query(sql, [customerEmail], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.status(200).json({ results });
+    });
+});
+
 router.put('/customer/:id', (req, res) => {
     const customerId = req.params.id;
     const { nama, email, password, telepon, alamat } = req.body;
@@ -95,3 +106,4 @@ router.put('/purchase-history/:id', (req, res) => {
 
 
 module.exports = router
+
