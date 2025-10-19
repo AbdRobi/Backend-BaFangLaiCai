@@ -131,6 +131,7 @@ router.put('/purchase-history/:id', (req, res) => {
     });
 });
 
+// Delete Purchase history
 router.delete('/purchase-history/:id', (req, res) => {
     const historyId = req.params.id;
     const sql = "DELETE FROM purchasehistory WHERE id = ?";
@@ -143,5 +144,6 @@ router.delete('/purchase-history/:id', (req, res) => {
 });
 
 module.exports = router
+
 
 
