@@ -1,4 +1,6 @@
 const express = require('express');
+
+
 const router = express.Router();
 const db = require(__dirname + '/conn');
 const cors = require('cors');
@@ -129,6 +131,17 @@ router.put('/purchase-history/:id', (req, res) => {
     });
 });
 
+router.delete('/purchase-history/:id', (req, res) => {
+    const historyId = req.params.id;
+    const sql = "DELETE FROM purchasehistory WHERE id = ?";
+    db.query(sql, [historyId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        res.status(200).json({ message: 'Purchase history deleted' });
+    });
+});
 
 module.exports = router
+
 
