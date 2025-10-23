@@ -27,7 +27,7 @@ DB_NAME=VendorHub
 PORT=3000
 ```
 
-> Pastikan database `VendorHub` sudah dibuat di MySQL.
+> Pastikan database `VendorHub.db` yang ada di folder db sudah export di MySQL.
 
 ### 4️⃣ Struktur Folder
 ```
