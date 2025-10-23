@@ -86,12 +86,3 @@ Akses API melalui: `http://localhost:3000`
 }
 ```
 
----
-
-## 📞 Contact
-Jika ada pertanyaan, silakan hubungi developer.
-
----
-
-🎉 **Project siap dijalankan!**
-
