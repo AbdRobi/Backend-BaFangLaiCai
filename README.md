@@ -9,7 +9,7 @@ VendorHub Backend adalah aplikasi REST API berbasis **Node.js, Express, dan MySQ
 ### 1️⃣ Clone Repository
 ```bash
 git clone <repository-url>
-cd VendorHub
+cd Backend-BaFangLaiCai
 ```
 
 ### 2️⃣ Install Dependencies
