@@ -68,21 +68,23 @@ Akses API melalui: `http://localhost:3000`
 ## ✅ Contoh Request Body
 ### Register Customer
 ```json
-{
-  "nama": "John Doe",
-  "email": "john@example.com",
-  "password": "123456",
-  "telepon": "08123456789",
-  "alamat": "Medan"
-}
+    {
+      "id": 1,
+      "nama": "Robi",
+      "email": "robi@gmail.com",
+      "password": "robi123456",
+      "telepon": "08123456789",
+      "alamat": "asdsadsadsadasdas"
+    }
 ```
 
 ### Tambah Purchase History
 ```json
-{
-  "customer_id": 1,
-  "purchase_details": "Beli laptop",
-  "purchase_date": "2025-10-01"
-}
+    {
+      "id": 0,
+      "customer_id": 1,
+      "purchase_details": "{\n  \"vendor\": \"Wedding Organizer A\",\n  \"package\": \"Gold Package\",\n  \"price\": 5000000,\n  \"date\": \"2025-10-14T12:00:00Z\",\n  \"location\": \"Jakarta\",\n  \"notes\": \"Full decoration + catering\",\n  \"status\": \"completed\"\n}",
+      "purchase_date": "2025-10-14T05:00:00.000Z"
+    }
 ```
 
