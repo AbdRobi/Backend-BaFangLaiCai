@@ -28,38 +28,6 @@ PORT=3000
 ```
 
 > Pastikan database `VendorHub.db` yang ada di folder db sudah export di MySQL.
-
-### 4️⃣ Struktur Folder
-```
-VendorHub/
-├── conn.js        # Koneksi database
-├── routes.js      # Routing API
-├── server.js      # Entry point aplikasi
-└── .env
-```
-
----
-
-## 🛢️ Koneksi Database (`conn.js`)
-```javascript
-const mysql = require('mysql2');
-require('dotenv').config();
-
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-});
-
-db.connect((err)=>{
-    if(err) throw err;
-    console.log('Database terhubung')
-});
-
-module.exports = db;
-```
-
 ---
 
 ## 📡 Endpoint CRUD
